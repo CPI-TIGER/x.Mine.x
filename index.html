@@ -171,6 +171,9 @@
                         <a class="nav-link" href="#features" role="menuitem">ویژگی‌ها</a>
                     </li>
                     <li class="nav-item" role="none">
+                        <a class="nav-link" href="minigames.html" role="menuitem">مینی‌گیم‌ها</a>
+                    </li>
+                    <li class="nav-item" role="none">
                         <a class="nav-link" href="#about" role="menuitem">درباره ما</a>
                     </li>
                 </ul>
@@ -372,6 +375,21 @@
         </section>
     </main>
 
+    <!-- Mini Games Section -->
+    <section id="minigames" class="games-section" role="region" aria-labelledby="games-title">
+        <div class="container">
+            <header class="row">
+                <div class="col-12">
+                    <h2 id="games-title" class="section-title text-center mb-5">مینی‌گیم‌های سایت</h2>
+                    <p class="games-desc text-center mb-4">اینجا می‌تونی چند بازی کوتاه و سرگرم‌کننده با تم سایت x.Mine.x رو کاملاً آنلاین تنها برای خودت تجربه کنی!</p>
+                </div>
+            </header>
+            <div class="row" id="games-wrapper">
+                <!-- Mini games will appear here dynamically -->
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer" role="contentinfo">
         <div class="container">
@@ -400,6 +418,7 @@
                         <ul class="footer-links">
                             <li><a href="#home">خانه</a></li>
                             <li><a href="#features">ویژگی‌ها</a></li>
+                            <li><a href="#minigames">مینی‌گیم‌ها</a></li>
                             <li><a href="#about">درباره ما</a></li>
                             <li><a href="#join">عضویت</a></li>
                         </ul>
@@ -426,5 +445,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
+    <button id="goto-minigames" aria-label="رفتن به مینی‌گیم‌ها" style="position:fixed;bottom:33px;right:26px;width:59px;height:59px;border-radius:50%;background:var(--gradient-glow);color:#fff;box-shadow:0 2px 16px 3px rgba(139,92,246,0.27);font-size:2rem;display:flex;align-items:center;justify-content:center;z-index:9998;border:none;outline:none;cursor:pointer;transition:all .2s;opacity:.93;" onclick="window.location.href='minigames.html'" title="مینی‌گیم‌ها">
+    <span style="margin:-1px 0 0 -2.5px;display:inline-block;" class="fa fa-gamepad"></span>
+</button>
 </body>
 </html>
