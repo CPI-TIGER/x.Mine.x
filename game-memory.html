@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>بازی حافظه کارت | x.Mine.x Mini Games</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+.mem-cards-board {perspective:900px;}
+.mem-card-flip {transition:transform 0.45s cubic-bezier(.4,1.7,.56,.96);transform-style:preserve-3d;position:relative;}
+.mem-card-face, .mem-card-back {position:absolute;width:100%;height:100%;backface-visibility:hidden;top:0;left:0;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:800;user-select:none;}
+.mem-card-back {background: var(--gradient-glow); color: var(--dark-color); border-radius:7px;}
+.mem-card-face {background:rgba(6,182,212,0.10);color:var(--secondary-color);border-radius:7px;}
+.mem-card-flip.flipped {transform:rotateY(180deg);}
+.mem-card-flip .mem-card-back {transform:rotateY(180deg);}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top"><div class="container"><a class="navbar-brand" href="minigames.html">برگشت به بازی‌ها</a></div></nav>
+<main style="margin-top:85px;min-height:65vh"><div class="container"><div class="row"><div class="col-lg-6 mx-auto minigame-box"><div class="minigame-title">حافظه کارت</div><div class="minigame-desc">کارت‌های مشابه را با هم پیدا کن. همه کارت‌ها را باز کن!</div><div id="mem-board" class="mem-cards-board" style="display:grid;grid-template-columns:repeat(4,46px);gap:8px;justify-content:center;margin:0 auto 1.4rem auto;"></div><div id="mem-moves" style="min-height:32px;"></div><button id="mem-restart" class="btn btn-outline-light w-100 mt-2">شروع مجدد</button></div></div></div></main>
+<script>let icons=[1,2,3,4,5,6,7,8],deck=shuffle([...icons,...icons]),flipped=[],matched=[],moves=0,lock=false,revealed=false;function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}function draw(showAll){const b=document.getElementById('mem-board');b.innerHTML='';deck.forEach((v,i)=>{const f=flipped.includes(i)||matched.includes(i)||(showAll&&revealed),fl=showAll||flipped.includes(i)||matched.includes(i);const d=document.createElement('div');d.className='mem-card-flip'+(fl?' flipped':'');d.style.cssText='width:46px;height:46px;transition-delay:'+(showAll?(i*27)+'ms':'0ms')+';margin:0;';let front=document.createElement('div'),back=document.createElement('div');front.className='mem-card-face';front.innerText='?';back.className='mem-card-back';back.innerText=v;d.appendChild(front);d.appendChild(back);if(!matched.includes(i)&&!flipped.includes(i)&&!showAll&&!lock){d.onclick=function(){if(lock)return;flipped.push(i);draw();if(flipped.length===2){lock=true;moves++;setTimeout(()=>{if(deck[flipped[0]]===deck[flipped[1]]){matched.push(flipped[0],flipped[1])}flipped=[];lock=false;draw()},800)}}}b.appendChild(d)});const txt=document.getElementById('mem-moves');if(matched.length===deck.length&&deck.length>0){txt.innerHTML='کارت‌ها تموم شد! تلاش: '+moves}else{txt.innerHTML='تعداد حرکت: '+moves}}function showAllThenHide(){revealed=true;draw(true);lock=true;setTimeout(()=>{revealed=false;lock=false;draw();},1600)}document.getElementById('mem-restart').onclick=function(){deck=shuffle([...icons,...icons]);flipped=[];matched=[];moves=0;lock=false;revealed=false;showAllThenHide()};showAllThenHide();</script></body></html>
