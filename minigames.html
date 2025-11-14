@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مینی‌گیم‌ها | x.Mine.x</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" aria-label="منوی اصلی">
+    <div class="container">
+        <a class="navbar-brand" href="index.html" aria-label="برگشت به صفحه اصلی">
+            <i class="fab fa-discord me-2"></i>
+            سرور دیسکورد x.Mine.x
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="تغییر وضعیت منو">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto" role="menubar">
+                <li class="nav-item"><a class="nav-link" href="index.html#home">خانه</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#features">ویژگی‌ها</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#about">درباره ما</a></li>
+            </ul>
+            <a href="index.html#join" class="btn btn-primary join-btn" role="button">عضویت</a>
+        </div>
+    </div>
+</nav>
+<main id="main-content" style="margin-top: 80px;">
+    <section class="games-section" role="region" aria-labelledby="games-title" style="min-height: 60vh;">
+        <div class="container">
+            <header class="row">
+                <div class="col-12">
+                    <h2 id="games-title" class="section-title text-center mb-5">مینی‌گیم‌های سایت</h2>
+                    <p class="games-desc text-center mb-4">یک بازی انتخاب کن و آنلاین سرگرم شو!</p>
+                </div>
+            </header>
+            <div class="row justify-content-center" id="gameselect-menu">
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="minigame-box text-center">
+                        <div style="font-size:2.3rem;">🔢</div>
+                        <div class="minigame-title">حدس عدد</div>
+                        <div class="minigame-desc">یک عدد مخفی حدس بزن!</div>
+                        <a class="btn btn-primary w-100 mt-2 select-minigame" href="game-guess.html">شروع</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="minigame-box text-center">
+                        <div style="font-size:2.3rem;">⭕❌</div>
+                        <div class="minigame-title">دوز</div>
+                        <div class="minigame-desc">Tic-Tac-Toe تک‌نفره</div>
+                        <a class="btn btn-primary w-100 mt-2 select-minigame" href="game-ttt.html">شروع</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="minigame-box text-center">
+                        <div style="font-size:2.3rem;">🃏</div>
+                        <div class="minigame-title">حافظه کارت</div>
+                        <div class="minigame-desc">مطابقت کارت‌ها رو پیدا کن</div>
+                        <a class="btn btn-primary w-100 mt-2 select-minigame" href="game-memory.html">شروع</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="minigame-box text-center">
+                        <div style="font-size:2.3rem;">⚡</div>
+                        <div class="minigame-title">تست واکنش</div>
+                        <div class="minigame-desc">واکنش سریع رو تست کن</div>
+                        <a class="btn btn-primary w-100 mt-2 select-minigame" href="game-reaction.html">شروع</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="minigame-box text-center">
+                        <div style="font-size:2.3rem;">🎨</div>
+                        <div class="minigame-title">انتخاب رنگ سریع</div>
+                        <div class="minigame-desc">کلیک سریع روی رنگ درست</div>
+                        <a class="btn btn-primary w-100 mt-2 select-minigame" href="game-color.html">شروع</a>
+                    </div>
+                </div>
+            </div>
+            <div id="minigame-content" class="row justify-content-center" style="display:none;"></div>
+            <div class="row"><div class="col-12 text-center"><button id="back-to-menu" class="btn btn-outline-light mt-3" style="display:none;min-width:144px;">بازگشت به انتخاب بازی</button></div></div>
+        </div>
+    </section>
+</main>
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <h3 class="footer-title">سرور دیسکورد x.Mine.x</h3>
+                <p>بهترین جامعه گیمینگ ایران با تجربه‌ای منحصر به فرد و امکانات پیشرفته</p>
+                <div class="social-links">
+                    <a href="https://discord.gg/TRvFdVWf"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <h4>لینک‌های مفید</h4>
+                <nav><ul class="footer-links"><li><a href="index.html#home">خانه</a></li><li><a href="index.html#features">ویژگی‌ها</a></li><li><a href="index.html#about">درباره ما</a></li><li><a href="index.html#join">عضویت</a></li></ul></nav>
+            </div>
+            <div class="col-lg-4">
+                <h4>اطلاعات تماس</h4>
+                <address>
+                    <p><strong>سرور دیسکورد:</strong> x.Mine.x</p>
+                    <p><strong>تأسیس:</strong> 1399</p>
+                    <p><strong>زبان:</strong> فارسی</p>
+                    <p><strong>وضعیت:</strong> آنلاین 24/7</p>
+                </address>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12 text-center">
+                <p>&copy; 2024 سرور دیسکورد x.Mine.x - طراحی و توسعه توسط EsTeam - تمامی حقوق محفوظ است</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="minigames.js"></script>
+</body>
+</html>
